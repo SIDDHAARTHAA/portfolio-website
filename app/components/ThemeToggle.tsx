@@ -26,7 +26,7 @@ export default function ThemeToggle() {
     };
 
     return (
-        <button onClick={toggleTheme} className="border">
+        <button onClick={toggleTheme} className="border font-sub">
             Toggle Theme ({theme})
         </button>
     );

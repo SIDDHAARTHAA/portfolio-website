@@ -1,72 +1,93 @@
 @import "tailwindcss";
 
+/* === Default Variables (will be overridden by .light or .dark) === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-
-  --font-sans: var(--font-worksans);
-  --font-mono: var(--font-jetbrains);
-  --font-bits: var(--font-bits);
-
-  --text-heading: #111111;
-  --text-body: #333333;
+  --font-main: var(--font-worksans);
+  --font-sub: var(--font-jetbrains);
 }
 
-/* Dark mode — system preference */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* === Light Theme === */
+html.light {
+  --background: #FCFBFF;
+  --card-bg: #F2F3FC;
+  --card-border: #D3DEFF;
 
-    --text-heading: #f1f1f1;
-    --text-body: #cccccc;
-  }
+  --text-main: #161616;
+  --text-sub: #516DAD;
+  --text-hero: #2453F1;
+  --text-hero-sub: #6B8EF9;
+
+  --button-bg: #2D73FF;
+  --button-text: #FFFFFF;
+
+  --code-text: #2D73FF;
+  --code-accent: #0BB569;
 }
 
+/* === Dark Theme === */
+html.dark {
+  --background: #11153A;
+  --card-bg: #19205C;
+  --card-border: #314CCE;
+
+  --text-main: #FFFFFF;
+  --text-sub: #87BFFF;
+  --text-hero: #38FFF8;
+  --text-hero-sub: #B0E4FF;
+
+  --button-bg: #F3A712;
+  --button-text: #19205C;
+
+  --code-text: #F3A712;
+  --code-accent: #31E981;
+}
+
+/* === Tailwind v4 CSS Tokens === */
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-text-heading: var(--text-heading);
-  --color-text-body: var(--text-body);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-  --font-bits: var(--font-bits);
+  --color-card: var(--card-bg);
+  --color-card-border: var(--card-border);
+
+  --color-text-main: var(--text-main);
+  --color-text-sub: var(--text-sub);
+  --color-text-hero: var(--text-hero);
+  --color-text-hero-sub: var(--text-hero-sub);
+
+  --color-button-bg: var(--button-bg);
+  --color-button-text: var(--button-text);
+
+  --color-code: var(--code-text);
+  --color-code-accent: var(--code-accent);
+
+  --font-main: var(--font-worksans);
+  --font-sub: var(--font-jetbrains);
 }
 
-html.light {
-  --background: #ffffff;
-  --foreground: #111111;
-}
-
-html.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-}
-
+/* === Global Element Styling === */
 body {
-  @apply bg-background text-foreground font-sans antialiased;
+  @apply bg-background text-text-main font-main antialiased;
 }
 
-
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @apply font-sans text-text-heading font-bold;
-}
-
-h1 {
-  @apply font-bits text-text-heading
+  @apply font-main text-text-hero font-bold;
 }
 
 p,
 span,
 li {
-  @apply font-mono text-text-body;
+  @apply font-sub text-text-sub;
+}
+
+button {
+  @apply bg-button-bg text-button-text font-main px-4 py-2 rounded;
 }
 
 code,
 pre {
-  @apply font-mono text-sm;
+  @apply font-sub text-code;
 }
