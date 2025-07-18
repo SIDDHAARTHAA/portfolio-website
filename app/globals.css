@@ -3,24 +3,60 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --font-sans: var(--font-worksans);
+  --font-mono: var(--font-jetbrains);
+  --font-bits: var(--font-bits);
+
+  --text-heading: #111111;
+  --text-body: #333333;
+}
+
+/* Dark mode — system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    --text-heading: #f1f1f1;
+    --text-body: #cccccc;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-text-heading: var(--text-heading);
+  --color-text-body: var(--text-body);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-bits: var(--font-bits);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground font-sans antialiased;
+}
+
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-sans text-text-heading font-bold;
+}
+
+h1 {
+  @apply font-bits text-text-heading
+}
+
+p,
+span,
+li {
+  @apply font-mono text-text-body;
+}
+
+code,
+pre {
+  @apply font-mono text-sm;
 }
