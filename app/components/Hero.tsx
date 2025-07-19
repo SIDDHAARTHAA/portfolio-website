@@ -18,7 +18,7 @@ export default function Hero() {
                 </div>
 
                 {/* Divider only on large screens */}
-                <div className="hidden xl:block w-px h-48 bg-card-border mx-4" />
+                <div className="hidden xl:block w-px h-48 bg-card-border mx-4 " />
 
                 <div className="flex flex-col justify-between gap-6 drop-shadow-2xl pt-1 text-center xl:text-left">
                     <div className="rounded-xl text-pretty">
