@@ -84,7 +84,7 @@ li {
 }
 
 button {
-  @apply bg-button-bg text-button-text font-main px-4 py-2 rounded;
+  @apply bg-button-bg text-button-text font-main px-4 py-2 hover:bg-amber-600;
 }
 
 code,
