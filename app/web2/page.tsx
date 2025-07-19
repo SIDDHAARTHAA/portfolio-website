@@ -1,12 +1,16 @@
 // "use client"
 import DockBar from "../components/DockBar";
-// import ThemeToggle from "../components/ThemeToggle";
+import DotGrid from '../../reactBits/blocks/Backgrounds/DotGrid/DotGrid';
 
 export default function Web2() {
     return (
         <div>
-            <h1>Hello form web2</h1>
-            <DockBar />
+            <div className="">
+                <DockBar />
+            </div>
+            <div>
+                <div><h1>Hi, I'm Sid</h1></div>
+            </div>
         </div>
     )
 }

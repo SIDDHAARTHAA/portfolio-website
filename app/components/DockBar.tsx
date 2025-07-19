@@ -40,18 +40,26 @@ export default function DockBar() {
         },
     ];
     return (
-        <div>
-            <div>
+        <div
+            style={{
+                position: "fixed",
+                bottom: 0,
+                left: 0,
+                width: "100%",
+                zIndex: 1000, // ensure it's above other content
+                display: "flex",
+                justifyContent: "center",
+                pointerEvents: "none", // allow clicks to pass through except the dock itself
+            }}
+        >
+            <div style={{ pointerEvents: "auto" }}>
                 <Dock
                     items={items}
                     panelHeight={68}
-                    // dockHeight={}
                     baseItemSize={50}
                     magnification={70}
                 />
-
             </div>
         </div>
-
     )
 }
