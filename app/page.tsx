@@ -21,7 +21,7 @@ export default function Home() {
         <code>console.log("Code snippet")</code>
       </pre>
 
-      {/* <ThemeToggle /> */}
+      {/* <ThemeToggle />  */}
       <h1>Hi, this is Sid</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, cumque quidem dicta repudiandae odit nobis perferendis dolores laboriosam porro labore consequatur quam, vitae maiores necessitatibus. Vero ullam maiores esse ea.</p>
       <div className="border p-4 rounded border-card-border bg-card text-[8px]">

@@ -74,7 +74,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-main text-text-hero font-bold;
+  @apply font-main text-text-hero;
 }
 
 p,

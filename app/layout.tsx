@@ -16,7 +16,7 @@ const worksans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Tailwind V4 Fonts Test",
+  title: "Sid's PortFolio",
   description: "Let’s see if Bungee and JetBrains Mono actually apply",
 };
 

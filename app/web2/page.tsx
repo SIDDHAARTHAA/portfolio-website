@@ -1,9 +1,10 @@
 // "use client"
+import AboutMe from "../components/AboutMe";
 import DockBar from "../components/DockBar";
 import Hero from "../components/Hero";
 export default function Web2() {
     return (
-        <div className="min-h-screen flex flex-col items-center relative px-4">
+        <div className="min-h-screen flex flex-col items-center relative px-4 xl:px-10">
             {/* <DotGrid className="absolute inset-0 -z-10" /> */}
 
             <div className="mb-8">
@@ -12,6 +13,8 @@ export default function Web2() {
 
             {/* Hero page */}
             <Hero />
+            {/* About me Page */}
+            <AboutMe />
         </div>
     );
 }
