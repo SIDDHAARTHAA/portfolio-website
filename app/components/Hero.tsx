@@ -1,7 +1,6 @@
-// import DotGrid from '../../reactBits/blocks/Backgrounds/DotGrid/DotGrid';
 import Image from "next/image";
-// import pfp from '../../public/aboutMe.png';
 import myImage from '../../public/myImage.jpg';
+import HeroButtons from "./HeroButtons";
 
 export default function Hero() {
     return (
@@ -28,8 +27,7 @@ export default function Hero() {
                         </p>
                     </div>
                     <div className="flex justify-center xl:justify-start gap-4">
-                        <button className="border cursor-pointer px-4 py-2 rounded-md transition-colors ease-out duration-500">About Me</button>
-                        <button className="border cursor-pointer px-4 py-2 rounded-md transition-colors ease-out duration-500">Download CV</button>
+                       <HeroButtons />
                     </div>
                 </div>
             </div>

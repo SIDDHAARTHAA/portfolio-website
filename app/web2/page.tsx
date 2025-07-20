@@ -10,11 +10,14 @@ export default function Web2() {
             <div className="mb-8">
                 <DockBar />
             </div>
-
             {/* Hero page */}
-            <Hero />
+            <div id="home">
+                <Hero />
+            </div>
             {/* About me Page */}
-            <AboutMe />
+            <div id="aboutme">
+                <AboutMe />
+            </div>
         </div>
     );
 }
