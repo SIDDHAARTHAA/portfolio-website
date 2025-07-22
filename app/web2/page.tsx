@@ -2,6 +2,7 @@
 import AboutMe from "../components/AboutMe";
 import DockBar from "../components/DockBar";
 import Hero from "../components/Hero";
+import Tools from "../components/Tools";
 export default function Web2() {
     return (
         <div className="min-h-screen flex flex-col items-center relative px-4 xl:px-10">
@@ -17,6 +18,9 @@ export default function Web2() {
             {/* About me Page */}
             <div id="aboutme">
                 <AboutMe />
+            </div>
+            <div id="tools">
+                <Tools />
             </div>
         </div>
     );
