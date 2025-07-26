@@ -1,4 +1,4 @@
-import { Terminal, Server, Database, Code2, LayoutPanelTop, Settings2, Camera, Brush, Shield } from "lucide-react";
+import { Terminal, Server, Database, Code2, LayoutPanelTop, Settings2, Camera, Brush, Shield, Wrench, ShieldPlus, Palette } from "lucide-react";
 
 export default function Tools() {
     const toolData = [
@@ -34,12 +34,12 @@ export default function Tools() {
         },
         {
             title: "Security & Learning",
-            icon: <Shield size={20} />,
+            icon: <ShieldPlus size={20} />,
             items: ["TryHackMe", "Wireshark", "Cybersecurity Basics"],
         },
         {
             title: "Soft Skills",
-            icon: <Brush size={20} />,
+            icon: <Palette size={20} />,
             items: ["Freelancing", "Client Handling", "Content Strategy"],
         },
     ];
@@ -49,7 +49,7 @@ export default function Tools() {
             <div className="w-full p-6 border border-card-border rounded-2xl shadow-xl/10 bg-muted/20 flex flex-col gap-6">
                 {/* Heading */}
                 <h1 className="text-4xl font-bold flex items-center gap-2 text-left">
-                    <Settings2 size={28} className="text-primary" />
+                    <Wrench size={28} className="text-primary" />
                     Tech Tool Box
                 </h1>
 

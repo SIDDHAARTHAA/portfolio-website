@@ -26,8 +26,8 @@ export default function Hero() {
                             Full stack dev, driven by passion (not pressure). Always curious, always building. Fast learner, big dreamer. Let’s create something cool — hit me up.
                         </p>
                     </div>
-                    <div className="flex justify-center xl:justify-start gap-4">
-                       <HeroButtons />
+                    <div className="flex justify-center xl:justify-start">
+                        <HeroButtons />
                     </div>
                 </div>
             </div>
