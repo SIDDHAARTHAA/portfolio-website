@@ -14,7 +14,6 @@ export default function HeroButtons() {
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 <button className="border cursor-pointer px-4 py-2 rounded-md transition-colors ease-out duration-500">View CV</button>
             </a>
-            
         </div>
     )
 }
