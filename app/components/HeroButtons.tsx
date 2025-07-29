@@ -10,10 +10,10 @@ export default function HeroButtons() {
         <div className="flex gap-2">
             <button className="border cursor-pointer px-4 py-2 rounded-md transition-colors ease-out duration-500" onClick={() => scrollToSection('aboutme')}>About Me</button>
             {/* <button className="border cursor-pointer px-4 py-2 rounded-md transition-colors ease-out duration-500">Download CV</button> */}
-
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 <button className="border cursor-pointer px-4 py-2 rounded-md transition-colors ease-out duration-500">View CV</button>
             </a>
         </div>
     )
+
 }

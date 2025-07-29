@@ -2,6 +2,7 @@
 import AboutMe from "../components/AboutMe";
 import DockBar from "../components/DockBar";
 import Hero from "../components/Hero";
+import Projects from "../components/Projects";
 import Tools from "../components/Tools";
 export default function Web2() {
     return (
@@ -21,6 +22,9 @@ export default function Web2() {
             </div>
             <div id="tools">
                 <Tools />
+            </div>
+            <div id="projects">
+                <Projects />
             </div>
         </div>
     );
