@@ -5,7 +5,7 @@ import HeroButtons from "./HeroButtons";
 export default function Hero() {
     return (
         <div className="min-h-screen flex flex-col items-center relative px-4">
-            <div className="flex flex-col xl:flex-row items-center w-[350px] h-[600px] md:w-[700px] xl:w-[745px] xl:h-[350px] justify-center border-1 border-card-border rounded-xl p-6 md:p-8 gap-6 xl:gap-8 shadow-xl/10 mt-0 xl:mt-25">
+            <div className="flex flex-col xl:flex-row items-center w-[350px] h-[600px] md:w-[700px] xl:w-[750px] xl:h-auto justify-center border-1 border-card-border rounded-xl p-6 md:p-8 gap-6 xl:gap-8 shadow-xl/10 mt-0 xl:mt-25">
                 <div className="flex-shrink-0 border border-card-border rounded-full">
                     <Image
                         src={myImage}
@@ -23,7 +23,7 @@ export default function Hero() {
                     <div className="rounded-xl text-pretty">
                         <h1 className="text-5xl md:text-6xl mb-4 font-bold">Hi, I'm Sid</h1>
                         <p className="text-base md:text leading-relaxed">
-                            Full stack dev, driven by passion (not pressure). Always curious, always building. Fast learner, big dreamer. Let’s create something cool — hit me up.
+                            Full stack dev, driven by passion. Always curious, always building. Fast learner, big dreamer. Let’s create something cool — hit me up.
                         </p>
                     </div>
                     <div className="flex justify-center xl:justify-start">
