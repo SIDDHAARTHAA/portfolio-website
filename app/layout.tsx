@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Toaster } from "sonner"; // ⬅️ ADD THIS
+import { Toaster } from "sonner";
 import {
   JetBrains_Mono,
   Work_Sans,
 } from "next/font/google";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
-
+import myImage from "./assets/myImage.png";
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
@@ -18,9 +18,33 @@ const worksans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sid's PortFolio",
-  description: "Let’s see if Bungee and JetBrains Mono actually apply",
+  title: "Sid's Portfolio",
+  description: "Explore Sid's projects, skills, and creative work. Built with Next.js, Tailwind, and love.",
+  metadataBase: new URL("https://app.sidlabs.shop"),
+  openGraph: {
+    title: "Sid's Portfolio",
+    description: "Explore Sid's projects, skills, and creative work. Built with Next.js, Tailwind, and love.",
+    url: "https://app.sidlabs.shop",
+    siteName: "Sid's Portfolio",
+    images: [
+      {
+        url: myImage.src,
+        width: 1200,
+        height: 630,
+        alt: "Sid's Portfolio",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sid's Portfolio",
+    description: "Explore Sid's projects, skills, and creative work. Built with Next.js, Tailwind, and love.",
+    images: [myImage.src],
+  },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
