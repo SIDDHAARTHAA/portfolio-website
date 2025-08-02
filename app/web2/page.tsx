@@ -1,5 +1,5 @@
-// "use client"
 import AboutMe from "../components/AboutMe";
+import Contact from "../components/Contact";
 import DockBar from "../components/DockBar";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
@@ -25,6 +25,12 @@ export default function Web2() {
             </div>
             <div id="projects">
                 <Projects />
+            </div>
+
+            {/* <div className="flex-1 border-t border-card-border w-[50%]"></div> */}
+
+            <div id="contact" className="w-full md:w-[75%] xl:w-[50%]">
+                <Contact />
             </div>
         </div>
     );
