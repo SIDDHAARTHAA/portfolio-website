@@ -11,6 +11,7 @@ This is a modern, minimal portfolio website built with [Next.js](https://nextjs.
 - **Contact Form:** Send messages directly (integrated with SheetDB).
 - **Project Showcase:** Highlighted projects with images and tech stack.
 - **About Me & Tools:** Education, skills, and toolbox sections.
+- **Smooth, Customizable Scrolling:** Powered by Lenis, now with a snappier scroll feel (`lerp: 0.1`).
 
 ## Tech Stack
 
@@ -54,10 +55,27 @@ This is a modern, minimal portfolio website built with [Next.js](https://nextjs.
 - **Theme:** Edit color variables in [`app/globals.css`](app/globals.css).
 - **Projects/Tools:** Update data in [`app/components/Projects.tsx`](app/components/Projects.tsx) and [`app/components/Tools.tsx`](app/components/Tools.tsx).
 - **Contact Form:** Uses SheetDB for submissions. Update the endpoint in [`app/components/Contact.tsx`](app/components/Contact.tsx) if needed.
+- **Scroll Feel:** Adjust the `lerp` value in [`app/components/SmoothScrollProvider.tsx`](app/components/SmoothScrollProvider.tsx) for more or less smoothness.
 
 ## Deployment
 
-You can deploy this project on [Vercel](https://vercel.com/) or any platform that supports Next.js.
+### Deploying to Cloudflare
+
+1. **Push your code to GitHub (or GitLab/Bitbucket).**
+2. **Go to [Cloudflare Pages](https://pages.cloudflare.com/) and create a new project.**
+3. **Connect your repository.**
+4. **Set the build settings:**
+   - **Framework preset:** Next.js
+   - **Build command:** `npm run build`
+   - **Output directory:** `.next`
+5. **Set environment variables if needed (e.g., `NODE_VERSION`, `NEXT_PUBLIC_*`).**
+6. **Deploy!**
+
+#### Custom Domain
+
+- In Cloudflare Pages, go to your project’s settings → Domains.
+- Add your custom domain and follow the DNS instructions (usually a CNAME or A record).
+- Make sure your DNS is managed by Cloudflare for easiest setup.
 
 ## Credits
 
@@ -67,4 +85,4 @@ You can deploy this project on [Vercel](https://vercel.com/) or any platform tha
 
 ---
 
-**Made with ❤️ by Siddhaartha B
+**Made with ❤️ by Siddhaartha B S**
