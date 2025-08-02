@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "sonner"; // ⬅️ ADD THIS
 import {
   JetBrains_Mono,
   Work_Sans,
@@ -45,7 +46,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster
+          theme="dark"
+          position="top-right"
+          toastOptions={{
+            style: {
+              borderRadius: '10px',
+              background: '#1a1a1a',
+              color: '#f5f5f5',
+              border: '1px solid #333',
+            },
+          }}
+        />
+
+      </body>
     </html>
   );
 }
