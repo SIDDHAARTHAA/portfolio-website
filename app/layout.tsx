@@ -5,6 +5,7 @@ import {
   JetBrains_Mono,
   Work_Sans,
 } from "next/font/google";
+import SmoothScrollProvider from "./components/SmoothScrollProvider";
 
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
@@ -47,20 +48,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        {children}
-        <Toaster
-          theme="dark"
-          position="top-right"
-          toastOptions={{
-            style: {
-              borderRadius: '10px',
-              background: '#1a1a1a',
-              color: '#f5f5f5',
-              border: '1px solid #333',
-            },
-          }}
-        />
-
+        <SmoothScrollProvider>
+          {children}
+          <Toaster
+            theme="dark"
+            position="top-right"
+            toastOptions={{
+              style: {
+                borderRadius: '10px',
+                background: '#1a1a1a',
+                color: '#f5f5f5',
+                border: '1px solid #333',
+              },
+            }}
+          />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

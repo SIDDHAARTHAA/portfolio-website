@@ -1,4 +1,4 @@
-import { Terminal, Server, Database, Code2, LayoutPanelTop, Settings2, Camera, Brush, Shield, Wrench, ShieldPlus, Palette } from "lucide-react";
+import { Terminal, Server, Database, Code2, LayoutPanelTop, Camera, Wrench, ShieldPlus, Palette } from "lucide-react";
 
 export default function Tools() {
     const toolData = [

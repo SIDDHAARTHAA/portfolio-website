@@ -2,6 +2,7 @@
 import { BriefcaseBusiness, Contact, Home, Moon, Sun, UserRound, Wrench } from 'lucide-react';
 import Dock from '@/reactBits/blocks/Components/Dock/Dock'
 import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 
 export default function DockBar() {
     const [theme, setTheme] = useState("light");
@@ -56,14 +57,19 @@ export default function DockBar() {
                 pointerEvents: "none", // allow clicks to pass through except the dock itself
             }}
         >
-            <div style={{ pointerEvents: "auto" }}>
+            <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 120, delay: 0.5 }}
+                style={{ pointerEvents: "auto" }}
+            >
                 <Dock
                     items={items}
                     panelHeight={68}
                     baseItemSize={50}
                     magnification={70}
                 />
-            </div>
+            </motion.div>
         </div>
     )
 }

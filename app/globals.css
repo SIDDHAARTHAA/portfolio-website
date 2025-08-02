@@ -84,11 +84,30 @@ li {
 }
 
 button {
-  @apply bg-button-bg text-button-text font-main px-4 py-2 hover:bg-amber-600;
+  @apply bg-button-bg text-button-text font-main px-4 py-2 hover:bg-amber-600 transition-transform duration-200;
+  transform: scale(1);
+}
+button:hover {
+  transform: scale(1.02);
 }
 
 code,
 pre {
   @apply font-sub text-code;
+}
+
+/* Add to your main container */
+.main-scroll {
+  scroll-snap-type: y mandatory;
+}
+section {
+  scroll-snap-align: start;
+}
+
+/* Add to card classes */
+.hover\:lift:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(80,120,255,0.12);
+  transition: all 0.2s cubic-bezier(.4,2,.6,1);
 }
 
