@@ -51,10 +51,10 @@ export default function DockBar() {
                 bottom: 0,
                 left: 0,
                 width: "100%",
-                zIndex: 1000, // ensure it's above other content
+                zIndex: 1000,
                 display: "flex",
                 justifyContent: "center",
-                pointerEvents: "none", // allow clicks to pass through except the dock itself
+                pointerEvents: "none",
             }}
         >
             <motion.div
@@ -63,12 +63,14 @@ export default function DockBar() {
                 transition={{ type: "spring", stiffness: 120, delay: 0.5 }}
                 style={{ pointerEvents: "auto" }}
             >
-                <Dock
-                    items={items}
-                    panelHeight={68}
-                    baseItemSize={50}
-                    magnification={70}
-                />
+                <div className="scale-90 sm:scale-100 origin-bottom">
+                    <Dock
+                        items={items}
+                        panelHeight={68}
+                        baseItemSize={50}
+                        magnification={70}
+                    />
+                </div>
             </motion.div>
         </div>
     )

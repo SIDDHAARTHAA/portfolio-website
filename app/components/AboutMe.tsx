@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AboutImage from "@/public/aboutMe.png";
+import AboutImage from "@/public/myImage.jpg";
 import { GraduationCap, LaptopMinimal, SquareArrowOutUpRight } from "lucide-react";
 
 export default function AboutMe() {

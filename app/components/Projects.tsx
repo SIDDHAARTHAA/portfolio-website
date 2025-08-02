@@ -47,33 +47,36 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section className="min-h-screen px-4 py-4 flex flex-col items-center gap-10 mt-6 mb-20">
+        <section className="min-h-screen px-1 sm:px-4 py-4 flex flex-col items-center gap-10 mt-6 mb-20">
             {/* Title with dash */}
-            <div className="w-full flex items-center gap-4">
-                <h2 className="text-4xl font-bold whitespace-nowrap px-3">Some Things I’ve Built</h2>
-                <div className="flex-1 border-t border-card-border"></div>
+            <div className="w-full flex flex-col items-center gap-4">
+                <h2 className="text-2xl sm:text-4xl font-bold text-center sm:text-left whitespace-nowrap px-3">
+                    Some Things I’ve Built
+                </h2>
+                <div className="hidden sm:flex flex-1 border-t border-card-border"></div>
             </div>
 
             {/* Projects */}
-            <div className="w-full flex flex-col gap-16 mt-4">
+            <div className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl flex flex-col gap-16 mt-4">
                 {projects.map((project, i) => (
                     <div
                         key={i}
                         className={`flex flex-col-reverse md:flex-row ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}
-    items-center gap-8 border border-transparent hover:border-card-border 
-    rounded-2xl p-4 box-border transition-all duration-300`}
+items-center gap-4 sm:gap-8 border border-transparent hover:border-card-border 
+rounded-2xl p-2 sm:p-4 box-border transition-all duration-300 w-full`}
                     >
                         {/* Image */}
-                        <div className="md:w-1/2">
+                        <div className="w-full md:w-1/2">
                             <Image
                                 src={project.image}
                                 alt={project.title}
-                                className="rounded-xl shadow-xl object-cover w-full h-auto grayscale hover:grayscale-0 transition"
+                                className="rounded-xl shadow-xl object-cover w-full h-auto max-h-40 sm:max-h-56 md:max-h-80 grayscale hover:grayscale-0 transition"
+                                sizes="(max-width: 640px) 90vw, 50vw"
                             />
                         </div>
 
                         {/* Content */}
-                        <div className="md:w-1/2 flex flex-col gap-4">
+                        <div className="w-full md:w-1/2 flex flex-col gap-4">
                             <p className="text-sm text-purple-400 uppercase tracking-widest">Featured Project</p>
                             <h3 className="text-3xl font-bold text-white">{project.title}</h3>
                             <p className="text-gray-300">{project.description}</p>
