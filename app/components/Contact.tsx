@@ -6,11 +6,11 @@ import { toast } from 'sonner'
 export default function ContactPage() {
     const [form, setForm] = useState({ name: "", message: "", contact: "" });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
         toast.loading('Sending your message...')
