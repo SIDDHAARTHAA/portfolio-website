@@ -35,7 +35,7 @@ export default function AboutMe() {
                         alt="Profile"
                         width={160}
                         height={160}
-                        className="rounded-full border border-card-border shadow-md"
+                        className="rounded-full border border-card-border shadow-md aspect-square object-cover w-32 h-32 sm:w-40 sm:h-40"
                     />
                 </div>
 
