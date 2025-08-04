@@ -7,6 +7,7 @@ import portfolioImg from '@/public/portfolioImg.png'
 import homeLabImg from '@/public/homeLab.png'
 import crypto_wallet_1 from '@/public/crypto_wallet_1.png'
 import crypto_wallet_2 from '@/public/crypto_wallet_2.png'
+import type { StaticImageData } from 'next/image';
 
 
 const projects = [
@@ -49,7 +50,7 @@ const projects = [
 ];
 
 // Slideshow component
-function ProjectSlideshow({ images, alt }: { images: any[]; alt: string }) {
+function ProjectSlideshow({ images, alt }: { images: (StaticImageData | string)[]; alt: string }) {
     const [index, setIndex] = useState(0);
     const [paused, setPaused] = useState(false);
     const [fading, setFading] = useState(false);
