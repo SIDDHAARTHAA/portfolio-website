@@ -15,7 +15,7 @@ const projects = [
         description:
             'Self-hosted file manager with upload, rename, delete, folder size, and download support. Frontend runs on Cloudflare Pages; backend runs on an old Android phone using Termux and Cloudflare Tunnel. Designed to be usable by all age groups — tested by family.',
         stack: ['React', 'Node.js', 'Cloudflare', 'Tailwind', 'MUI'],
-        image: homeLabImg,
+        image: [homeLabImg, sampleImg],
         github: 'https://github.com/SIDDHAARTHAA/homelab-final',
         live: 'https://homelab.sidlabs.shop/',
     },
@@ -52,13 +52,18 @@ const projects = [
 function ProjectSlideshow({ images, alt }: { images: any[]; alt: string }) {
     const [index, setIndex] = useState(0);
     const [paused, setPaused] = useState(false);
+    const [fading, setFading] = useState(false);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
         if (!paused && images.length > 1) {
             intervalRef.current = setInterval(() => {
-                setIndex((i) => (i + 1) % images.length);
-            }, 4000);
+                setFading(true);
+                setTimeout(() => {
+                    setIndex((i) => (i + 1) % images.length);
+                    setFading(false);
+                }, 400); // fade duration
+            }, 4000); // 4 seconds per image
         }
         return () => {
             if (intervalRef.current) clearInterval(intervalRef.current);
@@ -71,15 +76,40 @@ function ProjectSlideshow({ images, alt }: { images: any[]; alt: string }) {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
             className="relative w-full"
+            style={{
+                aspectRatio: '16/10',
+                minHeight: '180px',
+                maxHeight: '320px',
+                overflow: 'hidden',
+                background: '#18181b',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}
         >
-            <Image
-                src={images[index]}
-                alt={alt}
-                className="rounded-xl shadow-xl object-cover w-full h-auto max-h-40 sm:max-h-56 md:max-h-80 grayscale hover:grayscale-0 transition"
-                sizes="(max-width: 640px) 90vw, 50vw"
-            />
+            <div
+                className={`absolute inset-0 transition-opacity duration-400 ease-in-out
+                    ${fading ? 'opacity-0' : 'opacity-100'}
+                `}
+                key={index}
+                style={{
+                    willChange: 'opacity',
+                }}
+            >
+                <Image
+                    src={images[index]}
+                    alt={alt}
+                    fill
+                    style={{
+                        objectFit: 'contain',
+                        objectPosition: 'center',
+                    }}
+                    className="rounded-xl shadow-xl transition"
+                    sizes="(max-width: 640px) 90vw, 50vw"
+                />
+            </div>
             {images.length > 1 && (
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 z-10">
                     {images.map((_, i) => (
                         <span
                             key={i}
