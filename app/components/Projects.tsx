@@ -22,7 +22,7 @@ const projects = [
         stack: ['Next.js', 'Tailwind CSS', 'Bits UI'],
         image: portfolioImg,
         github: 'https://github.com/SIDDHAARTHAA/portfolio-website',
-        live: 'https://app.sidlabs.shop/',
+        live: 'https://sidlabs.shop/',
     },
     {
         title: 'Crypto Wallet Simulator',
@@ -31,7 +31,7 @@ const projects = [
         stack: ['React', 'Tailwind CSS', 'JS Crypto Libs'],
         image: sampleImg,
         github: 'https://github.com/SIDDHAARTHAA/web_based_crypto_wallet',
-        live: '#',
+        live: 'https://crypto.sidlabs.shop/',
     },
     {
         title: 'Social Media App',
