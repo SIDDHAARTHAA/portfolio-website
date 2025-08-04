@@ -1,9 +1,13 @@
 'use client'
 import Image from 'next/image'
 import { Github, ExternalLink } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
 import sampleImg from '@/public/sample.png'
 import portfolioImg from '@/public/portfolioImg.png'
 import homeLabImg from '@/public/homeLab.png'
+import crypto_wallet_1 from '@/public/crypto_wallet_1.png'
+import crypto_wallet_2 from '@/public/crypto_wallet_2.png'
+
 
 const projects = [
     {
@@ -29,7 +33,7 @@ const projects = [
         description:
             'Frontend-only simulation of Ethereum and Solana wallets. Generates valid mnemonic phrases and keypairs using real crypto logic.',
         stack: ['React', 'Tailwind CSS', 'JS Crypto Libs'],
-        image: sampleImg,
+        image: [crypto_wallet_1, crypto_wallet_2],
         github: 'https://github.com/SIDDHAARTHAA/web_based_crypto_wallet',
         live: 'https://crypto.sidlabs.shop/',
     },
@@ -44,6 +48,49 @@ const projects = [
     },
 ];
 
+// Slideshow component
+function ProjectSlideshow({ images, alt }: { images: any[]; alt: string }) {
+    const [index, setIndex] = useState(0);
+    const [paused, setPaused] = useState(false);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+    useEffect(() => {
+        if (!paused && images.length > 1) {
+            intervalRef.current = setInterval(() => {
+                setIndex((i) => (i + 1) % images.length);
+            }, 4000);
+        }
+        return () => {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+        };
+    }, [paused, images.length]);
+
+    if (!images.length) return null;
+    return (
+        <div
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            className="relative w-full"
+        >
+            <Image
+                src={images[index]}
+                alt={alt}
+                className="rounded-xl shadow-xl object-cover w-full h-auto max-h-40 sm:max-h-56 md:max-h-80 grayscale hover:grayscale-0 transition"
+                sizes="(max-width: 640px) 90vw, 50vw"
+            />
+            {images.length > 1 && (
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                    {images.map((_, i) => (
+                        <span
+                            key={i}
+                            className={`block w-2 h-2 rounded-full ${i === index ? 'bg-white' : 'bg-gray-400/50'}`}
+                        />
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
 
 export default function Projects() {
     return (
@@ -67,11 +114,9 @@ rounded-2xl p-2 sm:p-4 box-border transition-all duration-300 w-full`}
                     >
                         {/* Image */}
                         <div className="w-full md:w-1/2">
-                            <Image
-                                src={project.image}
+                            <ProjectSlideshow
+                                images={Array.isArray(project.image) ? project.image : [project.image]}
                                 alt={project.title}
-                                className="rounded-xl shadow-xl object-cover w-full h-auto max-h-40 sm:max-h-56 md:max-h-80 grayscale hover:grayscale-0 transition"
-                                sizes="(max-width: 640px) 90vw, 50vw"
                             />
                         </div>
 
