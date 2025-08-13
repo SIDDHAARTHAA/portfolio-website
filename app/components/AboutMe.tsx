@@ -35,7 +35,7 @@ export default function AboutMe() {
                         alt="Profile"
                         width={160}
                         height={160}
-                        className="rounded-full border border-card-border shadow-md aspect-square object-cover w-32 h-32 sm:w-40 sm:h-40"
+                        className="rounded-full border border-card-border aspect-square object-cover w-32 h-32 sm:w-40 sm:h-40"
                     />
                 </div>
 
@@ -43,7 +43,7 @@ export default function AboutMe() {
                     <h1 className="text-4xl font-bold">Siddhaartha B S</h1>
                     <p className="text-muted-foreground text-lg">Student @ IIIT Dharwad</p>
                     <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                        {["Web2 Dev", "Web3 Learner", "AI Enthusiast", "Filmmaker", "Video Editor", "Freelancer"].map((tag, idx) => (
+                        {["Web2 Dev", "Machine learning", "DevOps", "Filmmaker", "Video Editor", "Freelancer"].map((tag, idx) => (
                             <span
                                 key={idx}
                                 className="px-3 py-1 text-sm bg-muted border border-card-border rounded-full"
@@ -108,3 +108,4 @@ export default function AboutMe() {
         </div>
     );
 }
+
