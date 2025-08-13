@@ -18,7 +18,7 @@ const projects = [
         stack: ['React', 'Node.js', 'Cloudflare', 'Tailwind', 'MUI'],
         image: [homeLabImg, sampleImg],
         github: 'https://github.com/SIDDHAARTHAA/homelab-final',
-        live: 'https://homelab.sidlabs.shop/',
+        live: 'https://app.sidlabs.shop/',
     },
     {
         title: 'Portfolio Website',
