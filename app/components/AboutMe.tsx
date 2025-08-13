@@ -28,7 +28,7 @@ export default function AboutMe() {
         <div className="min-h-screen px-4 py-4 flex flex-col items-center gap-8 mt-6 mb-20">
 
             {/* Topbar */}
-            <div className="flex flex-col md:flex-row items-center gap-6 w-full md:w-[80%] xl:w-[100%] p-4 border-1 border-card-border rounded-2xl">
+            <div className="flex flex-col md:flex-row items-center gap-6 w-full md:w-[80%] xl:w-[100%] p-4 border-1 border-card-border shadow-xl/10 rounded-2xl">
                 <div>
                     <Image
                         src={AboutImage}
@@ -108,4 +108,5 @@ export default function AboutMe() {
         </div>
     );
 }
+
 
