@@ -10,12 +10,12 @@ export default function Tools() {
         {
             title: "Frontend",
             icon: <LayoutPanelTop size={20} />,
-            items: ["HTML", "CSS", "React.js", "Next.js", "TailwindCSS", "ShadCN/UI", "Radix UI"],
+            items: ["HTML", "CSS", "React.js", "Next.js", "TailwindCSS", "ShadCN/UI", "Radix UI", "ReactBits"],
         },
         {
             title: "Backend",
             icon: <Server size={20} />,
-            items: ["Node.js", "Express.js", "Zod", "JWT", "bcrypt", "Multer"],
+            items: ["Node.js", "Express.js", "Zod", "JWT", "bcrypt", "Multer", "Redux"],
         },
         {
             title: "Databases",
@@ -25,22 +25,12 @@ export default function Tools() {
         {
             title: "Dev Tools",
             icon: <Code2 size={20} />,
-            items: ["Git", "GitHub", "VSCode", "Postman", "Linux", "Vercel", "Netlify", "Render"],
+            items: ["Cloudflare", "Git", "GitHub", "VSCode", "Postman", "Linux", "Vercel", "Netlify", "Render"],
         },
         {
             title: "Design & Editing",
             icon: <Camera size={20} />,
-            items: ["DaVinci Resolve", "Photoshop", "After Effects", "Figma", "Motion Graphics"],
-        },
-        {
-            title: "Security & Learning",
-            icon: <ShieldPlus size={20} />,
-            items: ["TryHackMe", "Wireshark", "Cybersecurity Basics"],
-        },
-        {
-            title: "Soft Skills",
-            icon: <Palette size={20} />,
-            items: ["Freelancing", "Client Handling", "Content Strategy"],
+            items: ["DaVinci Resolve", "Fusion", "Photoshop", "After Effects", "Figma", "Motion Graphics"],
         },
     ];
 

@@ -43,7 +43,8 @@ export default function AboutMe() {
                     <h1 className="text-4xl font-bold">Siddhaartha B S</h1>
                     <p className="text-muted-foreground text-lg">Student @ IIIT Dharwad</p>
                     <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                        {["Web2 Dev", "Machine learning", "DevOps", "Filmmaker", "Video Editor", "Freelancer"].map((tag, idx) => (
+                        {["Web2 Engineer", "Cloud & Deployment", "Visual Storyteller", "Motion & Video Artist", "Independent Builder"
+                        ].map((tag, idx) => (
                             <span
                                 key={idx}
                                 className="px-3 py-1 text-sm bg-muted border border-card-border rounded-full"
@@ -64,11 +65,11 @@ export default function AboutMe() {
                         <LaptopMinimal /> Professional Summary
                     </h2>
                     <p className="text-base leading-relaxed">
-                        Full-Stack Developer based in Dharwad, blending rapid learning with a passion for clean, scalable tech. I specialize in building modern web applications using the MERN stack, with growing expertise in TypeScript, Next.js, Prisma, and cutting-edge UI systems like ShadCN/UI and Radix UI.
+                        Full Stack Engineer from Dharwad who designs, builds, and ships real-world products and websites. I work mostly with the MERN stack, and I am actively building deeper skills in backend architecture, TypeScript, Next.js, Prisma, and modern UI libraries like ShadCN/UI and Radix UI.
                         <br /><br />
-                        I’ve built everything from authentication systems with JWT and Zod validation to full file managers and chat apps with real-time features. I focus on writing modular, maintainable code and crafting polished UIs that just work across devices.
+                        I build backend systems I can trust, secure authentication with JWT and Zod, scalable APIs, real-time features, and frontend experiences that feel clean, fast, and responsive on all devices.
                         <br /><br />
-                        Whether it’s designing smart full-stack flows, refactoring frontend structure, or integrating complex backend logic — I believe in deep understanding and clean execution. I’m also diving into cybersecurity, and my editing/filmmaking background adds a visual edge to the things I build.
+                        I am currently advancing on the DevOps path, focusing on deployment, automation, cloud infrastructure, and production workflows. I engineer products, not templates, and I care about writing modular code, clean logic, and solid execution over quick hacks.
                     </p>
                 </div>
 

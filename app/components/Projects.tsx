@@ -7,6 +7,10 @@ import portfolioImg from '@/public/portfolioImg.png'
 import homeLabImg from '@/public/homeLab.png'
 import crypto_wallet_1 from '@/public/crypto_wallet_1.png'
 import crypto_wallet_2 from '@/public/crypto_wallet_2.png'
+import dks1 from '@/public/dks1.png'
+import dks2 from '@/public/dks2.png'
+import dks3 from '@/public/dks3.png'
+import dks4 from '@/public/dks4.png'
 import type { StaticImageData } from 'next/image';
 
 
@@ -19,6 +23,14 @@ const projects = [
         image: [homeLabImg, sampleImg],
         github: 'https://github.com/SIDDHAARTHAA/homelab-final',
         live: 'https://app.sidlabs.shop/',
+    },
+    {
+        title: '',
+        description: 'Duvidha ki Suvidha is a full-stack web application designed to streamline the process of filing, tracking, and managing complaints. It provides a user-friendly platform for citizens to raise issues and for administrators to efficiently resolve them.'
+        , stack: ['React', 'Axios', 'Redux', 'Node js', 'Exppress', 'MongoDB'],
+        image: [dks1, dks2, dks3, dks4],
+        github: 'https://github.com/SIDDHAARTHAA/Duvidha_ki_Suvidha/',
+        live: 'https://dks.sidlabs.shop',
     },
     {
         title: 'Portfolio Website',
@@ -45,7 +57,7 @@ const projects = [
         stack: ['React', 'Node.js', 'Express', 'MongoDB'],
         image: sampleImg,
         github: 'https://github.com/SIDDHAARTHAA/Social-Media-App',
-        live: '#',
+        live: '',
     },
 ];
 
