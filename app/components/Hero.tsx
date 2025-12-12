@@ -24,7 +24,7 @@ export default function Hero() {
 
                 <div className="flex flex-col justify-between gap-6 pt-1 text-center xl:text-left">
                     <div className="rounded-xl text-pretty">
-                        <h1 className="text-5xl md:text-6xl mb-4 font-bold">Hi, I'm dih</h1>
+                        <h1 className="text-5xl md:text-6xl mb-4 font-bold">Hi, I'm Sid</h1>
                         <p className="text-base md:text leading-relaxed">
                             Full Stack Developer who builds products with purpose. Curious, consistent, and always working on something new. Fast learner, strong focus on backend and end-to-end engineering. If you want to build something real, clean, and cool, connect anytime.
                         </p>
@@ -36,4 +36,5 @@ export default function Hero() {
             </SpotlightCard>
         </div>
     )
+
 }
