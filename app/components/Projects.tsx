@@ -147,7 +147,7 @@ export default function Projects() {
             </div>
 
             {/* Projects */}
-            <div className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl flex flex-col gap-16 mt-4">
+            <div className="w-full max-w-5xl flex flex-col gap-16 mt-4">
                 {projects.map((project, i) => (
                     <div
                         key={i}

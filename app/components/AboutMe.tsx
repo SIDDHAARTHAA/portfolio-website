@@ -28,7 +28,7 @@ export default function AboutMe() {
         <div className="min-h-screen px-4 py-4 flex flex-col items-center gap-8 mt-6 mb-20">
 
             {/* Topbar */}
-            <div className="flex flex-col md:flex-row items-center gap-6 w-full md:w-[80%] xl:w-[100%] p-4 border-1 border-card-border shadow-xl/10 rounded-2xl">
+            <div className="flex flex-col md:flex-row items-center gap-6 w-full max-w-5xl p-4 border-1 border-card-border shadow-xl/10 rounded-2xl">
                 <div>
                     <Image
                         src={AboutImage}
@@ -57,10 +57,10 @@ export default function AboutMe() {
             </div>
 
             {/* Cards */}
-            <div className="flex flex-col xl:flex-row gap-4 justify-center items-center xl:items-stretch">
+            <div className="flex flex-col gap-4 justify-center items-center w-full max-w-5xl">
 
                 {/* Professional Summary */}
-                <div className="bg-muted/20 p-6 rounded-xl border border-card-border w-full md:w-[80%] xl:w-[70%] shadow-xl/10">
+                <div className="bg-muted/20 p-6 rounded-xl border border-card-border w-full shadow-xl/10">
                     <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
                         <LaptopMinimal /> Professional Summary
                     </h2>
@@ -74,7 +74,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Education */}
-                <div className="bg-muted/20 p-6 rounded-xl border border-card-border shadow-xl/10 w-full md:w-[80%] xl:w-[70%] flex flex-col gap-6">
+                <div className="bg-muted/20 p-6 rounded-xl border border-card-border shadow-xl/10 w-full flex flex-col gap-6">
                     <h2 className="text-2xl font-semibold flex items-center gap-2">
                         <GraduationCap /> Education
                     </h2>

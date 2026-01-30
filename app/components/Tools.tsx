@@ -36,7 +36,7 @@ export default function Tools() {
 
     return (
         <div className="min-h-screen px-4 py-4 flex flex-col items-center gap-8 mt-6 mb-20">
-            <div className="w-full p-6 border border-card-border rounded-2xl shadow bg-muted/20 flex flex-col gap-6">
+            <div className="w-full max-w-5xl p-6 border border-card-border rounded-2xl shadow bg-muted/20 flex flex-col gap-6">
                 {/* Heading */}
                 <h1 className="text-4xl font-bold flex items-center gap-2 text-left">
                     <Wrench size={28} className="text-primary" />

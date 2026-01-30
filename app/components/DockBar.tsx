@@ -34,9 +34,9 @@ export default function DockBar() {
     };
     const items = [
         { icon: <Home size={16} color={color} />, label: 'Home', onClick: () => scrollToSection('home') },
-        { icon: <UserRound size={16} color={color} />, label: 'About Me', onClick: () => scrollToSection('aboutme') },
-        { icon: <Wrench size={16} color={color} />, label: 'My Developer Tools', onClick: () => scrollToSection('tools') },
         { icon: <BriefcaseBusiness size={16} color={color} />, label: 'Projects', onClick: () => scrollToSection('projects') },
+        { icon: <Wrench size={16} color={color} />, label: 'My Developer Tools', onClick: () => scrollToSection('tools') },
+        { icon: <UserRound size={16} color={color} />, label: 'About Me', onClick: () => scrollToSection('aboutme') },
         { icon: <Contact size={16} color={color} />, label: 'Contact Me!', onClick: () => scrollToSection('contact') },
         {
             icon: theme === "light" ? <Moon size={16} color='blue' /> : <Sun size={16} color='orange' />,

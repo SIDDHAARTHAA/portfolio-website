@@ -33,9 +33,9 @@ export default function Web2() {
             <div className="mb-8"><DockBar /></div>
 
             <div id="home"><Hero /></div>
-            <div id="aboutme"><AboutMe /></div>
-            <div id="tools"><Tools /></div>
             <div id="projects"><Projects /></div>
+            <div id="tools"><Tools /></div>
+            <div id="aboutme"><AboutMe /></div>
 
             <div className="flex items-center justify-center gap-2 mt-4 relative">
                 <span className="relative flex h-2 w-2">
