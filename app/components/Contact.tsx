@@ -53,7 +53,7 @@ export default function ContactPage() {
 
     return (
         <div className="min-h-screen px-4 py-4 flex flex-col items-center gap-8 mt-6 mb-20">
-            <div className="w-full p-6 border border-card-border rounded-2xl shadow bg-muted/20 flex flex-col gap-6 max-w-5xl">
+            <div className="w-full p-6 border border-card-border rounded-2xl shadow bg-muted/20 flex flex-col gap-6 max-w-5xl glass">
                 <h1 className="text-4xl font-bold flex items-center gap-2 text-left">
                     <Send size={28} className="text-primary" />
                     Hit Me Up 👋

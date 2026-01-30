@@ -152,8 +152,8 @@ export default function Projects() {
                     <div
                         key={i}
                         className={`flex flex-col-reverse md:flex-row ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}
-items-center gap-4 sm:gap-8 border border-transparent hover:border-card-border 
-rounded-2xl p-2 sm:p-4 box-border transition-all duration-300 w-full`}
+items-center gap-4 sm:gap-8 border hover:border-card-border 
+rounded-2xl p-2 sm:p-4 box-border transition-all duration-300 w-full glass`}
                     >
                         {/* Image */}
                         <div className="w-full md:w-1/2">

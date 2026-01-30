@@ -22,6 +22,8 @@ html.light {
 
   --code-text: #2D73FF;
   --code-accent: #0BB569;
+
+  --grid-color: rgba(22, 22, 22, 0.1);
 }
 
 /* === Dark Theme === */
@@ -40,6 +42,8 @@ html.dark {
 
   --code-text: #F3A712;
   --code-accent: #31E981;
+
+  --grid-color: rgba(255, 255, 255, 0.1);
 }
 
 /* === Tailwind v4 CSS Tokens === */
@@ -87,6 +91,7 @@ button {
   @apply bg-button-bg text-button-text font-main px-4 py-2 hover:bg-amber-600 transition-transform duration-200;
   transform: scale(1);
 }
+
 button:hover {
   transform: scale(1.02);
 }
@@ -100,6 +105,7 @@ pre {
 .main-scroll {
   scroll-snap-type: y mandatory;
 }
+
 section {
   scroll-snap-align: start;
 }
@@ -107,7 +113,13 @@ section {
 /* Add to card classes */
 .hover\:lift:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 32px rgba(80,120,255,0.12);
-  transition: all 0.2s cubic-bezier(.4,2,.6,1);
+  box-shadow: 0 8px 32px rgba(80, 120, 255, 0.12);
+  transition: all 0.2s cubic-bezier(.4, 2, .6, 1);
 }
 
+.glass {
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  background: color-mix(in srgb, var(--card-bg) 30%, transparent);
+  border: 1px solid var(--card-border);
+}

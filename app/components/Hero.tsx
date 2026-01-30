@@ -7,7 +7,7 @@ import HeroButtons from "./HeroButtons";
 export default function Hero() {
     return (
         <div className="min-h-screen flex flex-col items-center relative px-4">
-            <div className="flex flex-col xl:flex-row items-center w-full max-w-[90%] md:max-w-3xl xl:max-w-5xl justify-center border border-card-border rounded-xl p-6 md:p-8 gap-6 xl:gap-8 shadow-xl/10 mt-0 xl:mt-25 bg-card">
+            <div className="flex flex-col xl:flex-row items-center w-full max-w-[90%] md:max-w-3xl xl:max-w-5xl justify-center rounded-xl p-6 md:p-8 gap-6 xl:gap-8 shadow-xl/10 mt-0 xl:mt-25 glass">
                 <div className="flex-shrink-0 border border-card-border rounded-full">
                     {/* rgba(174, 184, 255, 1) */}
                     <Image

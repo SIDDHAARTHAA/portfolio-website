@@ -6,6 +6,9 @@ import DockBar from "./components/DockBar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Tools from "./components/Tools";
+import GridBackground from "./components/GridBackground";
+import SectionSeparator from "./components/SectionSeparator";
+import FadeIn from "./components/FadeIn";
 import { formatNumber, incrementVisit, onVisitsChange } from "./firebase";
 
 export default function Web2() {
@@ -31,11 +34,15 @@ export default function Web2() {
     return (
         <div className="min-h-screen flex flex-col items-center relative px-4 xl:px-10">
             <div className="mb-8"><DockBar /></div>
+            <GridBackground />
 
-            <div id="home"><Hero /></div>
-            <div id="projects"><Projects /></div>
-            <div id="tools"><Tools /></div>
-            <div id="aboutme"><AboutMe /></div>
+            <FadeIn><div id="home"><Hero /></div></FadeIn>
+            <SectionSeparator />
+            <FadeIn delay={0.2}><div id="projects"><Projects /></div></FadeIn>
+            <SectionSeparator />
+            <FadeIn delay={0.2}><div id="tools"><Tools /></div></FadeIn>
+            <SectionSeparator />
+            <FadeIn delay={0.2}><div id="aboutme"><AboutMe /></div></FadeIn>
 
             <div className="flex items-center justify-center gap-2 mt-4 relative">
                 <span className="relative flex h-2 w-2">
