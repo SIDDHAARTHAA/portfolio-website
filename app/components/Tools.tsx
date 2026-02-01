@@ -36,7 +36,7 @@ export default function Tools() {
 
     return (
         <div className="min-h-screen px-4 py-4 flex flex-col items-center gap-8 mt-6 mb-20">
-            <div className="w-full max-w-5xl p-6 rounded-2xl shadow flex flex-col gap-6 glass">
+            <div className="w-full max-w-5xl p-6 rounded-2xl shadow flex flex-col gap-6 border border-card-border bg-card-bg backdrop-blur-sm dark:bg-card/10">
                 {/* Heading */}
                 <h1 className="text-4xl font-bold flex items-center gap-2 text-left">
                     <Wrench size={28} className="text-primary" />
@@ -48,7 +48,7 @@ export default function Tools() {
                     {toolData.map((tool, idx) => (
                         <div
                             key={idx}
-                            className="border border-card-border rounded-2xl p-6 flex flex-col gap-3 shadow hover:shadow-md hover:shadow-primary/10 transition-all duration-200 glass"
+                            className="rounded-2xl p-6 flex flex-col gap-3 shadow hover:shadow-md hover:shadow-primary/10 transition-all duration-200 border border-card-border bg-card-bg backdrop-blur-sm dark:bg-card/10"
                         >
                             <h2 className="text-xl font-semibold flex items-center gap-2">
                                 {tool.icon}

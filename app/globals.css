@@ -116,10 +116,3 @@ section {
   box-shadow: 0 8px 32px rgba(80, 120, 255, 0.12);
   transition: all 0.2s cubic-bezier(.4, 2, .6, 1);
 }
-
-.glass {
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  background: color-mix(in srgb, var(--card-bg) 30%, transparent);
-  border: 1px solid var(--card-border);
-}

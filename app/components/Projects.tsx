@@ -11,11 +11,23 @@ import dks1 from '@/public/dks1.png'
 import dks2 from '@/public/dks2.png'
 import dks3 from '@/public/dks3.png'
 import dks4 from '@/public/dks4.png'
+import ecom1 from '@/public/ecom1.png'
+import ecom2 from '@/public/ecom2.png'
+import ecom3 from '@/public/ecom3.png'
+import ecom4 from '@/public/ecom4.png'
 import type { StaticImageData } from 'next/image';
 
 
 const projects = [
     {
+        title: 'Scalable E-Commerce – Retro Hardware Shop',
+        description:
+            'Production-ready backend architecture deployed on AWS (EC2, RDS, Load Balancers) using TypeScript, Prisma, and MySQL. Accompanied by a retro-styled frontend to showcase the API capabilities. Note: Frontend best viewed on desktop.',
+        stack: ['Node.js', 'TypeScript', 'AWS', 'Prisma', 'MySQL'],
+        image: [ecom1, ecom2, ecom3, ecom4],
+        github: 'https://github.com/SIDDHAARTHAA/e-commerce',
+        live: 'https://gear.sidlabs.shop/',
+    }, {
         title: 'Homelab – Personal Cloud File Manager',
         description:
             'Self-hosted file manager with upload, rename, delete, folder size, and download support. Frontend runs on Cloudflare Pages; backend runs on an old Android phone using Termux and Cloudflare Tunnel. Designed to be usable by all age groups — tested by family.',
@@ -152,8 +164,8 @@ export default function Projects() {
                     <div
                         key={i}
                         className={`flex flex-col-reverse md:flex-row ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}
-items-center gap-4 sm:gap-8 border hover:border-card-border 
-rounded-2xl p-2 sm:p-4 box-border transition-all duration-300 w-full glass`}
+items-center gap-4 sm:gap-8 hover:border-card-border 
+rounded-2xl p-2 sm:p-4 box-border transition-all duration-300 w-full border border-card-border bg-card-bg backdrop-blur-sm dark:bg-card/10`}
                     >
                         {/* Image */}
                         <div className="w-full md:w-1/2">

@@ -53,7 +53,7 @@ export default function ContactPage() {
 
     return (
         <div className="min-h-screen px-4 py-4 flex flex-col items-center gap-8 mt-6 mb-20">
-            <div className="w-full p-6 border border-card-border rounded-2xl shadow bg-muted/20 flex flex-col gap-6 max-w-5xl glass">
+            <div className="w-full p-6 border border-card-border rounded-2xl shadow bg-muted/20 flex flex-col gap-6 max-w-5xl border border-card-border bg-card-bg backdrop-blur-sm dark:bg-card/10">
                 <h1 className="text-4xl font-bold flex items-center gap-2 text-left">
                     <Send size={28} className="text-primary" />
                     Hit Me Up 👋
@@ -110,7 +110,7 @@ export default function ContactPage() {
                     <a href="https://www.linkedin.com/in/siddhaartha-b-s-16802b2b7" target="_blank" className="p-3 rounded-full bg-muted border border-card-border hover:scale-105 transition">
                         <Linkedin size={20} />
                     </a>
-                    <a href="https://x.com/sid_likescoding" target="_blank" className="p-3 rounded-full bg-muted border border-card-border hover:scale-105 transition">
+                    <a href="https://x.com/sid_logs" target="_blank" className="p-3 rounded-full bg-muted border border-card-border hover:scale-105 transition">
                         <Twitter size={20} />
                     </a>
                 </div>
