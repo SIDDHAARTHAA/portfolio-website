@@ -65,12 +65,14 @@ export default function AboutMe() {
                         <LaptopMinimal /> Professional Summary
                     </h2>
                     <p className="text-base leading-relaxed">
-                        Full Stack Engineer from Dharwad who designs, builds, and ships real-world products and websites. I work mostly with the MERN stack, and I am actively building deeper skills in backend architecture, TypeScript, Next.js, Prisma, and modern UI libraries like ShadCN/UI and Radix UI.
+                        Full Stack Engineer specializing in building scalable backend systems and production-ready web applications. I focus on API architecture, database design, authentication strategies, and performance-driven server-side logic using Node.js, TypeScript, Go, and both SQL and NoSQL databases.
                         <br /><br />
-                        I build backend systems I can trust, secure authentication with JWT and Zod, scalable APIs, real-time features, and frontend experiences that feel clean, fast, and responsive on all devices.
+                        I design reliable systems with secure authentication and session management, structured validation, optimized queries, and modular service-layer architecture. My work includes real-time features, file handling systems, and applications deployed behind CDN and reverse proxy layers to handle production traffic efficiently.
                         <br /><br />
-                        I am currently advancing on the DevOps path, focusing on deployment, automation, cloud infrastructure, and production workflows. I engineer products, not templates, and I care about writing modular code, clean logic, and solid execution over quick hacks.
+                        I actively work with cloud infrastructure, containerization, CI/CD pipelines, and Linux-based deployment environments. I prioritize clean architecture, maintainable codebases, and systems engineered for scale, reliability, and long-term sustainability.
                     </p>
+
+
                 </div>
 
                 {/* Education */}

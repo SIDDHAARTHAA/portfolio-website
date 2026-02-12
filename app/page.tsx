@@ -9,6 +9,7 @@ import Tools from "./components/Tools";
 import GridBackground from "./components/GridBackground";
 import SectionSeparator from "./components/SectionSeparator";
 import FadeIn from "./components/FadeIn";
+import Footer from "./components/Footer";
 import { formatNumber, incrementVisit, onVisitsChange } from "./firebase";
 
 export default function Web2() {
@@ -64,6 +65,8 @@ export default function Web2() {
             <div id="contact" className="w-full md:w-[75%] xl:w-[50%]">
                 <Contact />
             </div>
+
+            <Footer />
 
             <style jsx global>{`
                 @keyframes fade {
