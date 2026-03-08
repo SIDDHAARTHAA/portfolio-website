@@ -107,7 +107,7 @@ export default function ContactPage() {
                     <a href="https://www.instagram.com/siddhaartha_bs" target="_blank" className="p-3 rounded-full bg-muted border border-card-border hover:scale-105 transition">
                         <Instagram size={20} />
                     </a>
-                    <a href="https://www.linkedin.com/in/siddhaartha-b-s-16802b2b7" target="_blank" className="p-3 rounded-full bg-muted border border-card-border hover:scale-105 transition">
+                    <a href="https://www.linkedin.com/in/siddhaartha-bs-041063364/" target="_blank" className="p-3 rounded-full bg-muted border border-card-border hover:scale-105 transition">
                         <Linkedin size={20} />
                     </a>
                     <a href="https://x.com/sid_logs" target="_blank" className="p-3 rounded-full bg-muted border border-card-border hover:scale-105 transition">
