@@ -10,11 +10,12 @@ import {
   CollapsibleTrigger,
   CollapsibleWithContext,
 } from "@/components/ui/collapsible";
-import { Tag } from "@/components/ui/tag";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { Prose } from "@/components/ui/typography";
 import { UTM_PARAMS } from "@/config/site";
 import { TECH_STACK } from "@/features/profile/data/tech-stack";
+import type { TechStack } from "@/features/profile/types/tech-stack";
+import { cn } from "@/lib/utils";
 import { addQueryParams } from "@/utils/url";
 
 import type { Project } from "../../types/projects";
@@ -112,10 +113,10 @@ export function ProjectItem({
               )}
 
               {project.skills.length > 0 && (
-                <ul className="flex flex-wrap gap-1.5">
+                <ul className="flex flex-wrap items-center gap-3 select-none">
                   {project.skills.map((skill, index) => (
                     <li key={index} className="flex">
-                      <ProjectSkillTag skill={skill} />
+                      <ProjectSkill skill={skill} />
                     </li>
                   ))}
                 </ul>
@@ -128,80 +129,62 @@ export function ProjectItem({
   );
 }
 
-function ProjectSkillTag({ skill }: { skill: string }) {
-  const icon = getSkillIcon(skill);
+function ProjectSkill({ skill }: { skill: string }) {
+  const tech = getSkillTech(skill);
+
+  if (!tech) {
+    return (
+      <SimpleTooltip content={skill}>
+        <span className="inline-flex min-h-8 items-center rounded-lg border border-edge bg-background px-2 font-mono text-xs text-muted-foreground">
+          {skill}
+        </span>
+      </SimpleTooltip>
+    );
+  }
 
   return (
-    <Tag className={getSkillTagClass(skill)}>
-      {icon && (
-        <img
-          src={icon}
-          alt=""
-          width={14}
-          height={14}
-          draggable={false}
-          className="mr-1.5 size-3.5 object-contain"
+    <SimpleTooltip content={tech.title}>
+      <a
+        href={tech.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={tech.title}
+        className="transition-transform hover:scale-110"
+      >
+        <Image
+          src={tech.iconUrl}
+          alt={`${tech.title} icon`}
+          width={32}
+          height={32}
+          unoptimized
+          className={cn(
+            "h-8 w-8 object-contain",
+            tech.theme && "dark:invert"
+          )}
         />
-      )}
-      {skill}
-    </Tag>
+        <span className="sr-only">{tech.title}</span>
+      </a>
+    </SimpleTooltip>
   );
 }
 
-function getSkillIcon(skill: string) {
-  const normalized = normalizeSkill(skill);
-  const stackIcon = TECH_STACK.find(
+function getSkillTech(skill: string): TechStack | undefined {
+  const normalized = SKILL_ALIASES[normalizeSkill(skill)] ?? normalizeSkill(skill);
+
+  return TECH_STACK.find(
     (stack) =>
       normalizeSkill(stack.title) === normalized ||
       normalizeSkill(stack.key) === normalized
-  )?.iconUrl;
-
-  return stackIcon || LANGUAGE_ICON_URLS[normalized];
+  );
 }
 
 function normalizeSkill(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
-function getSkillTagClass(skill: string) {
-  const normalized = skill.toLowerCase();
-
-  if (/typescript|javascript|node|react|next|ink/.test(normalized)) {
-    return "border-sky-400/25 bg-sky-400/10 text-sky-700 dark:text-sky-300";
-  }
-
-  if (/go|golang|cli|linux|docker|kubernetes|aws|deployment/.test(normalized)) {
-    return "border-emerald-400/25 bg-emerald-400/10 text-emerald-700 dark:text-emerald-300";
-  }
-
-  if (/postgres|mysql|mongodb|prisma|database|backend|api/.test(normalized)) {
-    return "border-amber-400/25 bg-amber-400/10 text-amber-700 dark:text-amber-300";
-  }
-
-  if (/python|gpu|benchmark|image|processing|bio/.test(normalized)) {
-    return "border-fuchsia-400/25 bg-fuchsia-400/10 text-fuchsia-700 dark:text-fuchsia-300";
-  }
-
-  if (/frontend|web|ui/.test(normalized)) {
-    return "border-cyan-400/25 bg-cyan-400/10 text-cyan-700 dark:text-cyan-300";
-  }
-
-  return "border-zinc-400/25 bg-zinc-400/10 text-zinc-700 dark:text-zinc-300";
-}
-
-const LANGUAGE_ICON_URLS: Record<string, string> = {
-  c: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
-  cplusplus:
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-  css: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-  dockerfile:
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-  html: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-  javascript:
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  json: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg",
-  markdown:
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg",
-  python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-  shell: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
+const SKILL_ALIASES: Record<string, string> = {
+  dockerfile: "docker",
+  githubactions: "githubactions",
+  golang: "go",
+  shell: "linux",
 };

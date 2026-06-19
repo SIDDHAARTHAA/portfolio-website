@@ -10,9 +10,9 @@ export async function Projects() {
   return (
     <Panel id="projects">
       <PanelHeader>
-        <PanelTitle className="flex items-baseline gap-2">
+        <PanelTitle className="flex items-center gap-2">
           Projects
-          <span className="font-mono text-sm font-medium text-muted-foreground select-none">
+          <span className="inline-flex items-center font-mono text-sm font-medium leading-none text-muted-foreground select-none">
             ({projects.length})
           </span>
         </PanelTitle>

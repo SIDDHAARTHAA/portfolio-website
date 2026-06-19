@@ -7,11 +7,11 @@ import { VerifiedIcon } from "./verified-icon";
 
 export function ProfileHeader() {
   return (
-    <div className="screen-line-after flex border-x border-edge">
-      <div className="shrink-0 border-r border-edge">
-        <div className="mx-[0.5px] my-[3px]">
+    <div className="screen-line-after relative flex border-x border-edge">
+      <div className="relative flex shrink-0 items-center justify-center border-r border-edge p-3 sm:p-4">
+        <div>
           <img
-            className="size-32 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40"
+            className="size-32 rounded-full object-cover ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40"
             alt={`${USER.displayName}'s avatar`}
             src={USER.avatar}
             fetchPriority="high"

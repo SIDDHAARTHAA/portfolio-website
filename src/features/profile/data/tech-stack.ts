@@ -10,6 +10,37 @@ export const TECH_STACK: TechStack[] = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
   },
   {
+    key: "javascript",
+    title: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    categories: ["Language"],
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    key: "python",
+    title: "Python",
+    href: "https://www.python.org/",
+    categories: ["Language"],
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
+    key: "c",
+    title: "C",
+    href: "https://en.cppreference.com/w/c",
+    categories: ["Language"],
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+  },
+  {
+    key: "css",
+    title: "CSS",
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    categories: ["Language"],
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
     key: "nodejs",
     title: "Node.js",
     href: "https://nodejs.org/",
