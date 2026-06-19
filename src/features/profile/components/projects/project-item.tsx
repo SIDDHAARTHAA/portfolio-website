@@ -14,6 +14,7 @@ import { Tag } from "@/components/ui/tag";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { Prose } from "@/components/ui/typography";
 import { UTM_PARAMS } from "@/config/site";
+import { TECH_STACK } from "@/features/profile/data/tech-stack";
 import { addQueryParams } from "@/utils/url";
 
 import type { Project } from "../../types/projects";
@@ -114,7 +115,7 @@ export function ProjectItem({
                 <ul className="flex flex-wrap gap-1.5">
                   {project.skills.map((skill, index) => (
                     <li key={index} className="flex">
-                      <Tag className={getSkillTagClass(skill)}>{skill}</Tag>
+                      <ProjectSkillTag skill={skill} />
                     </li>
                   ))}
                 </ul>
@@ -125,6 +126,41 @@ export function ProjectItem({
       </div>
     </CollapsibleWithContext>
   );
+}
+
+function ProjectSkillTag({ skill }: { skill: string }) {
+  const icon = getSkillIcon(skill);
+
+  return (
+    <Tag className={getSkillTagClass(skill)}>
+      {icon && (
+        <img
+          src={icon}
+          alt=""
+          width={14}
+          height={14}
+          draggable={false}
+          className="mr-1.5 size-3.5 object-contain"
+        />
+      )}
+      {skill}
+    </Tag>
+  );
+}
+
+function getSkillIcon(skill: string) {
+  const normalized = normalizeSkill(skill);
+  const stackIcon = TECH_STACK.find(
+    (stack) =>
+      normalizeSkill(stack.title) === normalized ||
+      normalizeSkill(stack.key) === normalized
+  )?.iconUrl;
+
+  return stackIcon || LANGUAGE_ICON_URLS[normalized];
+}
+
+function normalizeSkill(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
 function getSkillTagClass(skill: string) {
@@ -152,3 +188,20 @@ function getSkillTagClass(skill: string) {
 
   return "border-zinc-400/25 bg-zinc-400/10 text-zinc-700 dark:text-zinc-300";
 }
+
+const LANGUAGE_ICON_URLS: Record<string, string> = {
+  c: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+  cplusplus:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+  css: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  dockerfile:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  html: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  javascript:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  json: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg",
+  markdown:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg",
+  python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  shell: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
+};

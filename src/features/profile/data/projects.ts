@@ -17,6 +17,7 @@ type GitHubRepository = {
   homepage: string | null;
   language: string | null;
   topics?: string[];
+  languages_url: string;
   created_at: string;
   updated_at: string;
   pushed_at: string | null;
@@ -45,18 +46,24 @@ export async function getPortfolioProjects(): Promise<Project[]> {
 
   const data = (await response.json()) as GitHubSearchResponse;
 
-  return (data.items ?? []).map((repo, index) => ({
-    id: String(repo.id),
-    title: repo.name,
-    period: {
-      start: formatMonthYear(repo.created_at),
-      end: repo.pushed_at ? formatMonthYear(repo.pushed_at) : undefined,
-    },
-    link: repo.homepage || repo.html_url,
-    skills: getProjectSkills(repo),
-    description: getProjectDescription(repo),
-    isExpanded: index === 0,
-  }));
+  return Promise.all(
+    (data.items ?? []).map(async (repo, index) => {
+      const languages = await getTopLanguages(repo.languages_url);
+
+      return {
+        id: String(repo.id),
+        title: repo.name,
+        period: {
+          start: formatMonthYear(repo.created_at),
+          end: repo.pushed_at ? formatMonthYear(repo.pushed_at) : undefined,
+        },
+        link: repo.homepage || repo.html_url,
+        skills: getProjectSkills(repo, languages),
+        description: getProjectDescription(repo),
+        isExpanded: index === 0,
+      };
+    })
+  );
 }
 
 function getGitHubHeaders() {
@@ -72,14 +79,38 @@ function getGitHubHeaders() {
   return headers;
 }
 
-function getProjectSkills(repo: GitHubRepository) {
+async function getTopLanguages(languagesUrl: string) {
+  const response = await fetch(languagesUrl, {
+    headers: getGitHubHeaders(),
+    cache: "force-cache",
+  });
+
+  if (!response.ok) {
+    return [];
+  }
+
+  const languages = (await response.json()) as Record<string, number>;
+
+  return Object.entries(languages)
+    .sort(([, a], [, b]) => b - a)
+    .slice(0, 3)
+    .map(([language]) => language);
+}
+
+function getProjectSkills(repo: GitHubRepository, languages: string[]) {
   const topics =
     repo.topics
       ?.filter((topic) => topic !== PROJECT_TOPIC)
       .map(formatTopic)
       .slice(0, 5) ?? [];
 
-  return [...new Set([repo.language, ...topics].filter(Boolean) as string[])];
+  return [
+    ...new Set([
+      ...languages,
+      repo.language,
+      ...topics,
+    ].filter(Boolean) as string[]),
+  ].slice(0, 8);
 }
 
 function getProjectDescription(repo: GitHubRepository) {
