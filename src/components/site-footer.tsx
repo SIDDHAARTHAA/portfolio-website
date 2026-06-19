@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="max-w-screen overflow-x-hidden px-2">
       <div className="screen-line-before mx-auto border-x border-edge pt-4 md:max-w-3xl">
         <p className="mb-1 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
-          Siddhaartha B S · Problem Solver
+          Sid
         </p>
 
         <p className="mb-4 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
@@ -17,6 +17,28 @@ export function SiteFooter() {
             rel="noopener"
           >
             GitHub
+          </a>
+          .
+        </p>
+
+        <p className="mb-4 px-4 text-center font-mono text-xs text-balance text-muted-foreground">
+          Interface direction inspired by{" "}
+          <a
+            className="link"
+            href="https://chanhdai.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            Chánh Đại
+          </a>{" "}
+          and{" "}
+          <a
+            className="link"
+            href="https://github.com/ncdai/chanhdai.com"
+            target="_blank"
+            rel="noopener"
+          >
+            ncdai/chanhdai.com
           </a>
           .
         </p>

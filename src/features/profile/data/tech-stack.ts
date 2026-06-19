@@ -33,12 +33,12 @@ export const TECH_STACK: TechStack[] = [
     iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
   },
   {
-    key: "css",
-    title: "CSS",
-    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    key: "c++",
+    title: "C++",
+    href: "https://isocpp.org/",
     categories: ["Language"],
     iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
   },
   {
     key: "nodejs",
@@ -62,6 +62,14 @@ export const TECH_STACK: TechStack[] = [
     title: "Go",
     href: "https://go.dev/",
     categories: ["Language"],
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
+  },
+    {
+    key: "go",
+    title: "Go",
+    href: "https://go.dev/",
+    categories: ["Backend"],
     iconUrl:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
   },

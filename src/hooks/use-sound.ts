@@ -51,10 +51,21 @@ export function useSound(url: string) {
   }, [url]);
 
   const play = useCallback(() => {
-    if (audioCtxRef.current && bufferRef.current) {
-      const source = audioCtxRef.current.createBufferSource();
-      source.buffer = bufferRef.current;
-      source.connect(audioCtxRef.current.destination);
+    const audioCtx = audioCtxRef.current;
+    const buffer = bufferRef.current;
+
+    if (audioCtx && buffer) {
+      if (audioCtx.state === "suspended") {
+        void audioCtx.resume();
+      }
+
+      const source = audioCtx.createBufferSource();
+      const gain = audioCtx.createGain();
+
+      source.buffer = buffer;
+      gain.gain.value = 0.35;
+      source.connect(gain);
+      gain.connect(audioCtx.destination);
       source.start(0);
     }
   }, []);
